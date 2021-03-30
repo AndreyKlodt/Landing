@@ -32,7 +32,6 @@ form.addEventListener('submit', (e) => {
 });
 
 const modalClose = document.querySelector('.modal__close');
-console.log(modalClose);
 modalClose.addEventListener('click', () => {
   modal.classList.toggle('active');
   body.classList.remove('active');
