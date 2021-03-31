@@ -3,7 +3,7 @@ AOS.init();
 
 // typed js
 var typed = new Typed('#typed', {
-  strings: [" <p class='about__upper-text'>Привет, Меня зовут Андрей.</p> <p class='gold-text about__main-text'>Я — FullStack разработчик.</p> <p class='about__lower-text'>На этом сайте можно ознакомиться с моими <a class='gold-text' href='#'>работами</a> и <a class='gold-text' href='#'>связаться</a> со мной.</p> <div class = 'button-wrapper'> <a class='about__button btn' href = '#contacts'>Написать мне</a> <a class='about__button btn' href = 'img/cv.pdf' download>Скачать резюме</a></div>"],
+  strings: [" <p class='about__upper-text'>Привет, Меня зовут Андрей.</p> <p class='gold-text about__main-text'>Я — FullStack разработчик.</p> <p class='about__lower-text'>На этом сайте можно ознакомиться с моими <a class='gold-text' href='#'>работами</a> и <a class='gold-text' href='#contacts'>связаться</a> со мной.</p> <div class = 'button-wrapper'> <a class='about__button btn' href = '#contacts'>Написать мне</a> <a class='about__button btn' href = 'img/cv.pdf' download>Скачать резюме</a></div>"],
   typeSpeed: 35
 });
 
