@@ -7,32 +7,74 @@ var typed = new Typed('#typed', {
   typeSpeed: 35
 });
 
-//burger
-const burger = document.querySelector('.header-burger');
-const nav = document.querySelector('.header-links');
-const body = document.querySelector('body');
-const blackout = document.querySelector('.blackout'); // Затемнение
-const burgerLine = document.querySelector('.header-burger__middle-line');
-burger.addEventListener('click', () => {
-  nav.classList.toggle('active');
-  body.classList.toggle('active');
-  burgerLine.classList.toggle('active');
-  blackout.classList.toggle('active');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
 });
 
+//burger
+const burger = document.querySelector('.hamburger'),
+  nav = document.querySelector('.header-links'),
+  navLinks = document.querySelectorAll('.header-links__item'),
+  html = document.querySelector('html'),
+  checkbox = document.querySelector('.checkbox'),
+  blackout = document.querySelector('.blackout'); // Затемнение
 
+burger.addEventListener('click', () => {
+
+  if (checkbox.checked == false) {
+    showNav();
+  } else {
+    hideNav();
+  }
+
+});
+
+navLinks.forEach((item) => {
+  item.addEventListener('click', () => {
+    checkbox.checked = false;
+    hideNav();
+  })
+})
+
+function showNav() {
+  nav.classList.add('active');
+  html.classList.add('active');
+  blackout.classList.add('active');
+}
+function hideNav() {
+  nav.classList.remove('active');
+  html.classList.remove('active');
+  blackout.classList.remove('active');
+}
+
+// function toggleClasses() {
+//   nav.classList.toggle('active');
+//   html.classList.toggle('active');
+//   if (checkbox.checked == true) {
+//     checkbox.checked = false;
+//   } else {
+//     // checkbox.checked = true;
+//   }
+//   blackout.classList.toggle('active');
+// }
 //forms
 const form = document.querySelector('.formData');
 const modal = document.querySelector('.modal');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   modal.classList.toggle('active');
-  body.classList.toggle('active');
+  html.classList.toggle('active');
   form.reset();
 });
 
 const modalClose = document.querySelector('.modal__close');
 modalClose.addEventListener('click', () => {
   modal.classList.toggle('active');
-  body.classList.remove('active');
+  html.classList.remove('active');
 });
