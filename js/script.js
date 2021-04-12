@@ -7,6 +7,7 @@ var typed = new Typed('#typed', {
   typeSpeed: 35
 });
 
+// Smooth scroll to anchors
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
